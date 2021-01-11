@@ -1,2 +1,23 @@
 @import '../utils/mixins';
 @import '../utils/variables';
+
+.excel__formula-input{
+    display: inline-block;
+    width: 100%;
+    max-width: 95%;
+    height: 3rem;
+    font-size: 2rem;
+    padding: 0.4rem;
+    border: 2px solid #DADCE0;
+    &:focus {
+        outline: 0;
+    }
+}
+.excel__formula-title {
+    font-size: 2.5rem;
+    opacity: 0.7;
+    position: relative;
+    padding-right: 1rem;
+    border-right: 2px solid #DADCE0;
+    font-style: italic;
+}

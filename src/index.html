@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel on JS</title>
     <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div class="container" id="app">
-        <div class="excel">
-            <div class="excel__header"></div>
-            <div class="excel__toolbar"></div>
-            <div class="excel__formula"></div>
-            <div class="excel__table"></div>
+    <div id="app">
+        <div class="dashboard">
+            <div class="dashboard__header">
+                <h1>Excel Dasboard</h1>
+            </div>
+            <div class="dashboard__new">
+                <div class="dashboard__item">
+                    <span class="dashboard__item-title">Новая таблица</span>
+                </div>
+            </div>
+            <div class="dashboard__table">
+                <div class="dashboard__row">
+                    <span class="dashboard__row-title">Название</span>
+                    <span class="dashboard__row-title">Дата открытия</span>
+                </div>
+                <div class="dashboard__row dashboard__row--table">
+                    <a class="dashboard__row-title" href="#">Таблица 1</a>
+                    <span class="dashboard__row-title">14.02.2020</span>
+                </div>
+                <div class="dashboard__row dashboard__row--table">
+                    <a class="dashboard__row-title" href="#">Таблица 1</a>
+                    <span class="dashboard__row-title">14.02.2020</span>
+                </div>
+            </div>
         </div>
     </div>
 </body>

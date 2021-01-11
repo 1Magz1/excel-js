@@ -19,7 +19,7 @@ const jsLoaders = () => {
         }
     ]
 
-    if(Dev) {
+    if (Dev) {
         loaders.push('eslint-loader')
     }
 
@@ -43,7 +43,9 @@ module.exports = {
     devtool: Dev ? 'source-map' : false,
     devServer: {
         port: 1488,
-        hot: Dev
+        contentBase: path.join(__dirname, 'src/'),
+        watchContentBase: true,
+        hot: true
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -71,13 +73,7 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        // options: {
-                        //     hmr: Dev,
-                        //     reloadAll: true
-                        // }
-                    },
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader',
                 ],

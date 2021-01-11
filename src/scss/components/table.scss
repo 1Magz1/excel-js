@@ -1,2 +1,61 @@
 @import '../utils/mixins';
 @import '../utils/variables';
+
+.excel__table {
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+.row {
+    display: flex;
+    &--edit {
+        .row__item {
+            text-align: left;
+            padding-top: 3px;
+        }
+        .row__item-content {
+            width: 100%;
+            margin-left: 5px;
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+    &__info {
+        display: inline-block;
+        width: 68px;
+        height: 48px;
+        background: #F8F9FA;
+        text-align: center;
+        border-bottom: 2px solid #DADCE0;
+    }
+    &__item {
+        display: inline-block;
+        background: #F8F9FA;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        border: 2px solid #DADCE0;
+        border-top: 0;
+        border-right: 0;
+        &:last-child {
+            border-right: 2px solid #DADCE0;
+        }
+        &.selected {
+            outline: 5px solid #1A73E8;
+            z-index: 10;
+        }
+    }
+    &__item-content {
+        font-size: 2.2rem;
+    }
+    &__info-content {
+        display: inline-block;
+        font-size: 2.2rem;
+    }
+    &__info--count {
+        border: 2px solid #DADCE0;
+        border-top: 0;
+        border-right: 0;
+    }
+
+}
