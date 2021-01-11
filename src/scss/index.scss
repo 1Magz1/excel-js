@@ -1,5 +1,45 @@
-$blue: #022;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import '~normalize.css';
 
+@import './components/header';
+@import './components/formula';
+@import './components/table';
+@import './components/toolbar';
+@import './components/dashboard';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    background: $blue;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+.excel {
+    position: relative;
+    .excel__header,
+    .excel__toolbar,
+    .excel__formula {
+        border-bottom: 2px solid #DADCE0;
+        padding: 0.8rem;
+    }
+}
+.btn {
+    cursor: pointer;
+    border: 0;
+    background-color: unset;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease-in-out;
+    color: #5F6368;
+    &:hover {
+        background-color: #f1f3f4;
+    }
+    &:focus {
+        outline: 0;
+        background-color: #fff;
+        color: rgb(0, 199, 0);
+        background-color: #E6F4EA;
+    }
+
 }
