@@ -4,6 +4,7 @@
 .excel__table {
     overflow-x: auto;
     padding-bottom: 5px;
+    overflow: auto;
 }
 .row {
     display: flex;
@@ -20,6 +21,10 @@
             }
         }
     }
+    &__data {
+        display: flex;
+        width: 100%;
+    }
     &__info {
         display: inline-block;
         width: 68px;
@@ -27,16 +32,21 @@
         background: #F8F9FA;
         text-align: center;
         border-bottom: 2px solid #DADCE0;
+        padding-top: 4px;
+        font-size: 2rem;
     }
-    &__item {
-        display: inline-block;
-        background: #F8F9FA;
+    &__item-content {
+        display: block;
+        font-size: 2rem;
         width: 100%;
-        max-width: 400px;
+        max-width: 200px;
+        background: #F8F9FA;
         text-align: center;
         border: 2px solid #DADCE0;
         border-top: 0;
         border-right: 0;
+        flex: none;
+        padding-top: 6px;
         &:last-child {
             border-right: 2px solid #DADCE0;
         }
@@ -44,18 +54,6 @@
             outline: 5px solid #1A73E8;
             z-index: 10;
         }
-    }
-    &__item-content {
-        font-size: 2.2rem;
-    }
-    &__info-content {
-        display: inline-block;
-        font-size: 2.2rem;
-    }
-    &__info--count {
-        border: 2px solid #DADCE0;
-        border-top: 0;
-        border-right: 0;
     }
 
 }
