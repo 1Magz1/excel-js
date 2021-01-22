@@ -4,19 +4,30 @@ const CODES = {
 }
 
 function createRow(index, content) {
+    const contentItem = index ? '<div class="resize resize--mode" data-resize="row"></div>' : '';
     return `
-    <div class='row'>
-        <div class="row__info">${index ? index : ''}</div>
+    <div class='row' data-type="resizable">
+                ${contentItem}
+
+        <div class="row__info" >
+            ${index ? index : ''}
+        </div>
         <div class="row__data">${content}</div>
     </div>`;
 }
 
-function createCol(el) {
-    return `<span class="row__item-content">${el}</span>`;
+function createCol(el, index) {
+    const pos = index + 1;
+    return `
+    <div class="row__item-content" data-type="resizable" data-col="${pos}">
+        ${el}
+        <div class="resize" data-resize="col"></div>
+    </div>`;
 }
 
-function toCell() {
-    return `<span class="row__item-content" contenteditable="true"></span>`;
+function toCell(_, index) {
+    const pos = index + 1;
+    return `<span class="row__item-content" contenteditable="true" data-col="${pos}"></span>`;
 }
 
 function toChar(_, index) {
