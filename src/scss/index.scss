@@ -6,6 +6,7 @@
 @import './components/table';
 @import './components/toolbar';
 @import './components/dashboard';
+@import './components/resize';
 
 * {
     margin: 0;
@@ -15,6 +16,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
+    padding-bottom: 0;
 }
 .excel {
     position: relative;
@@ -37,7 +39,6 @@ body {
     }
     &:focus {
         outline: 0;
-        background-color: #fff;
         color: rgb(0, 199, 0);
         background-color: #E6F4EA;
     }

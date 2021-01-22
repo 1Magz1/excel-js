@@ -1,0 +1,42 @@
+@import '../utils/variables';
+.resize {
+    z-index: 10;
+    position: absolute;
+    margin: 3px;
+    display: block;
+    content: '';
+    width: 10px;
+    height: 95%;
+    bottom: -2px;
+    right: 0;
+    background: $selected-color;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+        cursor: col-resize;
+        opacity: 1;
+    }
+    &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 2px;
+        background: #1A73E8;
+        height: 100vw;
+        left: 47%;
+    }
+    &.resize--mode {
+        bottom: 0;
+        left: 0;
+        height: 10px;
+        width: 62px;
+        &:hover {
+            cursor: ns-resize;
+        }
+        &:after {
+            width: 100vw;
+            height: 2px;
+            top: 45%;
+        }
+    }
+}

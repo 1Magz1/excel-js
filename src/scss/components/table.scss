@@ -2,12 +2,18 @@
 @import '../utils/variables';
 
 .excel__table {
-    overflow-x: auto;
-    padding-bottom: 5px;
+    //overflow-x: auto;
+    //padding-bottom: 5px;
     overflow: auto;
+    height: 74vh;
 }
 .row {
     display: flex;
+    border-bottom: 2px solid #DADCE0;
+    background: #F8F9FA;
+    position: relative;
+    width: 280%;
+    min-height: 48px;
     &--edit {
         .row__item {
             text-align: left;
@@ -24,36 +30,36 @@
     &__data {
         display: flex;
         width: 100%;
+        border-left: 2px solid #DADCE0;
     }
     &__info {
+        position: relative;
         display: inline-block;
         width: 68px;
         height: 48px;
-        background: #F8F9FA;
         text-align: center;
-        border-bottom: 2px solid #DADCE0;
         padding-top: 4px;
         font-size: 2rem;
+
     }
     &__item-content {
+        position: relative;
         display: block;
         font-size: 2rem;
         width: 100%;
         max-width: 200px;
+        min-width: 50px;
         background: #F8F9FA;
         text-align: center;
-        border: 2px solid #DADCE0;
-        border-top: 0;
-        border-right: 0;
+        border-right: 2px solid #DADCE0;
         flex: none;
         padding-top: 6px;
         &:last-child {
             border-right: 2px solid #DADCE0;
         }
         &.selected {
-            outline: 5px solid #1A73E8;
+            outline: 5px solid $selected-color;
             z-index: 10;
         }
     }
-
 }
