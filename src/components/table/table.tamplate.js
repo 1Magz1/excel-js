@@ -7,8 +7,7 @@ function createRow(index, content) {
     const contentItem = index ? '<div class="resize resize--mode" data-resize="row"></div>' : '';
     return `
     <div class='row' data-type="resizable">
-                ${contentItem}
-
+        ${contentItem}
         <div class="row__info" >
             ${index ? index : ''}
         </div>
@@ -25,9 +24,17 @@ function createCol(el, index) {
     </div>`;
 }
 
-function toCell(_, index) {
-    const pos = index + 1;
-    return `<span class="row__item-content" contenteditable="true" data-col="${pos}"></span>`;
+function toCell(row) {
+    return function(_, index) {
+        const pos = index + 1;
+        return `<span
+                    class="row__item-content"
+                    contenteditable="true"
+                    data-col="${pos}"
+                    data-type="cell"
+                    data-id="${row}:${index}"
+                    ></span>`;
+    }
 }
 
 function toChar(_, index) {
@@ -45,12 +52,12 @@ export function createTable(rowsCount = 15) {
 
     rows.push(createRow(null, cols));
 
-    for(let i =0; i < rowsCount; i++) {
+    for(let row =0; row < rowsCount; row++) {
         const cells = new Array(colsCount)
             .fill('')
-            .map(toCell)
+            .map(toCell(row))
             .join('')
-        rows.push(createRow(i + 1, cells));
+        rows.push(createRow(row + 1, cells));
     }
     return rows.join('');
 }
