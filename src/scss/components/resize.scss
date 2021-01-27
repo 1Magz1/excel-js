@@ -6,8 +6,8 @@
     display: block;
     content: '';
     width: 10px;
-    height: 95%;
-    bottom: -2px;
+    height: 90%;
+    bottom: 1px;
     right: 0;
     background: $selected-color;
     opacity: 0;
@@ -23,7 +23,7 @@
         width: 2px;
         background: #1A73E8;
         height: 100vw;
-        left: 47%;
+        left: 40%;
     }
     &.resize--mode {
         bottom: 0;
